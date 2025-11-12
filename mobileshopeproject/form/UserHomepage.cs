@@ -16,5 +16,7 @@ namespace mobileshopeproject.form
         {
             InitializeComponent();
         }
+
+      
     }
 }
