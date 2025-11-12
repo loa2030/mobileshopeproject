@@ -41,7 +41,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 108);
+            this.label1.Location = new System.Drawing.Point(99, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(105, 157);
+            this.label2.Location = new System.Drawing.Point(99, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 2;
@@ -70,7 +70,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(181, 232);
+            this.linkLabel2.Location = new System.Drawing.Point(185, 243);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(112, 16);
             this.linkLabel2.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(204, 193);
+            this.button1.Location = new System.Drawing.Point(203, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -89,21 +89,21 @@
             // 
             // txtuid
             // 
-            this.txtuid.Location = new System.Drawing.Point(184, 102);
+            this.txtuid.Location = new System.Drawing.Point(178, 90);
             this.txtuid.Name = "txtuid";
             this.txtuid.Size = new System.Drawing.Size(100, 22);
             this.txtuid.TabIndex = 5;
             // 
             // txtpwd
             // 
-            this.txtpwd.Location = new System.Drawing.Point(184, 151);
+            this.txtpwd.Location = new System.Drawing.Point(178, 139);
             this.txtpwd.Name = "txtpwd";
             this.txtpwd.Size = new System.Drawing.Size(100, 22);
             this.txtpwd.TabIndex = 6;
             // 
             // lblMsg
             // 
-            this.lblMsg.Location = new System.Drawing.Point(2, 193);
+            this.lblMsg.Location = new System.Drawing.Point(178, 176);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(176, 22);
             this.lblMsg.TabIndex = 7;

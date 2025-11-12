@@ -19,6 +19,16 @@ namespace mobileshopeproject.form
             InitializeComponent();
         }
 
-    
+        void btnAdd_Click(object sender, EventArgs e)
+        {
+            //int compId = int.Parse(txtCompId.Text);
+            //string compName = txtCompName.Text;
+       
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
