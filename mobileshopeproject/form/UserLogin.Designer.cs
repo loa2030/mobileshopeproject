@@ -88,6 +88,7 @@
             this.btnUserLogin.TabIndex = 6;
             this.btnUserLogin.Text = "Login";
             this.btnUserLogin.UseVisualStyleBackColor = true;
+            this.btnUserLogin.Click += new System.EventHandler(this.btnUserLogin_Click);
             // 
             // linkLabel2
             // 

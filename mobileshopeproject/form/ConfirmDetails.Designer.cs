@@ -32,19 +32,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbAdd = new System.Windows.Forms.Label();
+            this.lbMN = new System.Windows.Forms.Label();
+            this.lbCus = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lbPrice = new System.Windows.Forms.Label();
+            this.lbIMEI = new System.Windows.Forms.Label();
+            this.lbModelN = new System.Windows.Forms.Label();
+            this.lbCN = new System.Windows.Forms.Label();
+            this.lbWarranly = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -86,41 +86,41 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Emaild";
             // 
-            // label5
+            // lbEmail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(155, 165);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(155, 165);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(44, 16);
+            this.lbEmail.TabIndex = 7;
+            this.lbEmail.Text = "label5";
             // 
-            // label6
+            // lbAdd
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(155, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "label6";
+            this.lbAdd.AutoSize = true;
+            this.lbAdd.Location = new System.Drawing.Point(155, 127);
+            this.lbAdd.Name = "lbAdd";
+            this.lbAdd.Size = new System.Drawing.Size(44, 16);
+            this.lbAdd.TabIndex = 6;
+            this.lbAdd.Text = "label6";
             // 
-            // label7
+            // lbMN
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(155, 89);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 16);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "label7";
+            this.lbMN.AutoSize = true;
+            this.lbMN.Location = new System.Drawing.Point(155, 89);
+            this.lbMN.Name = "lbMN";
+            this.lbMN.Size = new System.Drawing.Size(44, 16);
+            this.lbMN.TabIndex = 5;
+            this.lbMN.Text = "label7";
             // 
-            // label8
+            // lbCus
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(155, 43);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "label8";
+            this.lbCus.AutoSize = true;
+            this.lbCus.Location = new System.Drawing.Point(155, 43);
+            this.lbCus.Name = "lbCus";
+            this.lbCus.Size = new System.Drawing.Size(44, 16);
+            this.lbCus.TabIndex = 4;
+            this.lbCus.Text = "label8";
             // 
             // label9
             // 
@@ -158,50 +158,50 @@
             this.label12.TabIndex = 8;
             this.label12.Text = "Company Name:";
             // 
-            // label13
+            // lbPrice
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(439, 165);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 16);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "label13";
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.Location = new System.Drawing.Point(439, 165);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(51, 16);
+            this.lbPrice.TabIndex = 15;
+            this.lbPrice.Text = "label13";
             // 
-            // label14
+            // lbIMEI
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(439, 127);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 16);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "label14";
+            this.lbIMEI.AutoSize = true;
+            this.lbIMEI.Location = new System.Drawing.Point(439, 127);
+            this.lbIMEI.Name = "lbIMEI";
+            this.lbIMEI.Size = new System.Drawing.Size(51, 16);
+            this.lbIMEI.TabIndex = 14;
+            this.lbIMEI.Text = "label14";
             // 
-            // label15
+            // lbModelN
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(439, 89);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 16);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "label15";
+            this.lbModelN.AutoSize = true;
+            this.lbModelN.Location = new System.Drawing.Point(439, 89);
+            this.lbModelN.Name = "lbModelN";
+            this.lbModelN.Size = new System.Drawing.Size(51, 16);
+            this.lbModelN.TabIndex = 13;
+            this.lbModelN.Text = "label15";
             // 
-            // label16
+            // lbCN
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(439, 43);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 16);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "label16";
+            this.lbCN.AutoSize = true;
+            this.lbCN.Location = new System.Drawing.Point(439, 43);
+            this.lbCN.Name = "lbCN";
+            this.lbCN.Size = new System.Drawing.Size(51, 16);
+            this.lbCN.TabIndex = 12;
+            this.lbCN.Text = "label16";
             // 
-            // label17
+            // lbWarranly
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(439, 196);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 16);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "label17";
+            this.lbWarranly.AutoSize = true;
+            this.lbWarranly.Location = new System.Drawing.Point(439, 196);
+            this.lbWarranly.Name = "lbWarranly";
+            this.lbWarranly.Size = new System.Drawing.Size(51, 16);
+            this.lbWarranly.TabIndex = 17;
+            this.lbWarranly.Text = "label17";
             // 
             // label18
             // 
@@ -220,6 +220,7 @@
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -237,20 +238,20 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.label17);
+            this.Controls.Add(this.lbWarranly);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lbPrice);
+            this.Controls.Add(this.lbIMEI);
+            this.Controls.Add(this.lbModelN);
+            this.Controls.Add(this.lbCN);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbEmail);
+            this.Controls.Add(this.lbAdd);
+            this.Controls.Add(this.lbMN);
+            this.Controls.Add(this.lbCus);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -268,19 +269,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbAdd;
+        private System.Windows.Forms.Label lbMN;
+        private System.Windows.Forms.Label lbCus;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbPrice;
+        private System.Windows.Forms.Label lbIMEI;
+        private System.Windows.Forms.Label lbModelN;
+        private System.Windows.Forms.Label lbCN;
+        private System.Windows.Forms.Label lbWarranly;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;

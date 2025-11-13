@@ -49,18 +49,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtStockAvailable = new System.Windows.Forms.TextBox();
-            this.cbSelectCompanyName = new System.Windows.Forms.ComboBox();
             this.cbSelectModelNumber = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.linkSearch = new System.Windows.Forms.LinkLabel();
+            this.cbSelectCompanyName = new System.Windows.Forms.ComboBox();
+            this.txtStockAvailable = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewsSearch = new System.Windows.Forms.DataGridView();
+            this.linkSearch = new System.Windows.Forms.LinkLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabViewStock.SuspendLayout();
             this.tabSales.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -107,6 +107,7 @@
             this.tabSales.TabIndex = 0;
             this.tabSales.Text = "Sales";
             this.tabSales.UseVisualStyleBackColor = true;
+            this.tabSales.Click += new System.EventHandler(this.tabSales_Click);
             // 
             // label9
             // 
@@ -126,6 +127,7 @@
             this.btnSubmitUP.TabIndex = 34;
             this.btnSubmitUP.Text = "Submit";
             this.btnSubmitUP.UseVisualStyleBackColor = true;
+            this.btnSubmitUP.Click += new System.EventHandler(this.btnSubmitUP_Click);
             // 
             // txtPP
             // 
@@ -277,6 +279,66 @@
             this.tabPage2.Text = "viewstock";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cbSelectModelNumber
+            // 
+            this.cbSelectModelNumber.FormattingEnabled = true;
+            this.cbSelectModelNumber.Location = new System.Drawing.Point(218, 135);
+            this.cbSelectModelNumber.Name = "cbSelectModelNumber";
+            this.cbSelectModelNumber.Size = new System.Drawing.Size(121, 24);
+            this.cbSelectModelNumber.TabIndex = 6;
+            // 
+            // cbSelectCompanyName
+            // 
+            this.cbSelectCompanyName.FormattingEnabled = true;
+            this.cbSelectCompanyName.Location = new System.Drawing.Point(218, 84);
+            this.cbSelectCompanyName.Name = "cbSelectCompanyName";
+            this.cbSelectCompanyName.Size = new System.Drawing.Size(121, 24);
+            this.cbSelectCompanyName.TabIndex = 5;
+            // 
+            // txtStockAvailable
+            // 
+            this.txtStockAvailable.Location = new System.Drawing.Point(218, 181);
+            this.txtStockAvailable.Name = "txtStockAvailable";
+            this.txtStockAvailable.Size = new System.Drawing.Size(100, 22);
+            this.txtStockAvailable.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(63, 187);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(104, 16);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Stock Available:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(63, 135);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(140, 16);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Select Model Number:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(63, 84);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(149, 16);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Select Company Name:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label10.Location = new System.Drawing.Point(119, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 29);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "View Stock";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridViewsSearch);
@@ -291,81 +353,15 @@
             this.tabPage3.Text = "searchCustomerbyIMEI";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // dataGridViewsSearch
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label10.Location = new System.Drawing.Point(119, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 29);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "View Stock";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(63, 84);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 16);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Select Company Name:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(63, 135);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(140, 16);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Select Model Number:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(63, 187);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(104, 16);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Stock Available:";
-            // 
-            // txtStockAvailable
-            // 
-            this.txtStockAvailable.Location = new System.Drawing.Point(218, 181);
-            this.txtStockAvailable.Name = "txtStockAvailable";
-            this.txtStockAvailable.Size = new System.Drawing.Size(100, 22);
-            this.txtStockAvailable.TabIndex = 4;
-            // 
-            // cbSelectCompanyName
-            // 
-            this.cbSelectCompanyName.FormattingEnabled = true;
-            this.cbSelectCompanyName.Location = new System.Drawing.Point(218, 84);
-            this.cbSelectCompanyName.Name = "cbSelectCompanyName";
-            this.cbSelectCompanyName.Size = new System.Drawing.Size(121, 24);
-            this.cbSelectCompanyName.TabIndex = 5;
-            // 
-            // cbSelectModelNumber
-            // 
-            this.cbSelectModelNumber.FormattingEnabled = true;
-            this.cbSelectModelNumber.Location = new System.Drawing.Point(218, 135);
-            this.cbSelectModelNumber.Name = "cbSelectModelNumber";
-            this.cbSelectModelNumber.Size = new System.Drawing.Size(121, 24);
-            this.cbSelectModelNumber.TabIndex = 6;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(53, 58);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(121, 16);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Enter IMEI Number:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(192, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 22);
-            this.textBox1.TabIndex = 1;
+            this.dataGridViewsSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewsSearch.Location = new System.Drawing.Point(56, 153);
+            this.dataGridViewsSearch.Name = "dataGridViewsSearch";
+            this.dataGridViewsSearch.RowHeadersWidth = 51;
+            this.dataGridViewsSearch.RowTemplate.Height = 24;
+            this.dataGridViewsSearch.Size = new System.Drawing.Size(525, 192);
+            this.dataGridViewsSearch.TabIndex = 3;
             // 
             // linkSearch
             // 
@@ -377,15 +373,21 @@
             this.linkSearch.TabStop = true;
             this.linkSearch.Text = "Search";
             // 
-            // dataGridViewsSearch
+            // textBox1
             // 
-            this.dataGridViewsSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewsSearch.Location = new System.Drawing.Point(56, 153);
-            this.dataGridViewsSearch.Name = "dataGridViewsSearch";
-            this.dataGridViewsSearch.RowHeadersWidth = 51;
-            this.dataGridViewsSearch.RowTemplate.Height = 24;
-            this.dataGridViewsSearch.Size = new System.Drawing.Size(525, 192);
-            this.dataGridViewsSearch.TabIndex = 3;
+            this.textBox1.Location = new System.Drawing.Point(192, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(174, 22);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(53, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(121, 16);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Enter IMEI Number:";
             // 
             // UserHomepage
             // 

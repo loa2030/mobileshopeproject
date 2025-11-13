@@ -90,6 +90,12 @@
     <EmbeddedResource Include="form\AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\ConfirmDetails.resx">
+      <DependentUpon>ConfirmDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\UserHomepage.resx">
+      <DependentUpon>UserHomepage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\UserLogin.resx">
       <DependentUpon>UserLogin.cs</DependentUpon>
     </EmbeddedResource>
