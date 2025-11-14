@@ -14,7 +14,8 @@ namespace mobileshopeproject.form
 {
     public partial class UserLogin : Form
     {
-        SqlConnection conn = new SqlConnection(@"Server=LAPTOP-86BEM0IS;Database=AppMobile;Integrated Security=True");
+        private static readonly string conString = ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
+        private SqlConnection conn = new SqlConnection(conString);
         public UserLogin()
         {
             InitializeComponent();

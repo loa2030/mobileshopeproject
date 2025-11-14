@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;// cài này gắn thư viện vào 
 
 namespace mobileshopeproject.form
 {
@@ -23,7 +24,9 @@ namespace mobileshopeproject.form
         string Mobilenumber;
         string address;
         string Email;
-        SqlConnection conn = new SqlConnection(@"Server=LAPTOP-86BEM0IS;Database=AppMobile;Integrated Security=True");
+        private static readonly string conString= ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
+        private SqlConnection conn = new SqlConnection(conString);
+
         public UserHomepage(string user)
         {
             InitializeComponent();
@@ -34,8 +37,6 @@ namespace mobileshopeproject.form
         private void WireEvents()
         {
             cbCompName.SelectedIndexChanged += cbCompName_SelectedIndexChanged;
-            //cbMdNumber.SelectedIndexChanged += cbMdNumber_SelectedIndexChanged;
-            //cbIMEINumber.SelectedIndexChanged += cbIMEINumber_SelectedIndexChanged;
         }
         private void LoadCompaines()
         {

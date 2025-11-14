@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -22,7 +23,8 @@ namespace mobileshopeproject.form
         string Mobilenumber;
         string address;
         string Email;
-        SqlConnection conn = new SqlConnection(@"Server=LAPTOP-86BEM0IS;Database=AppMobile;Integrated Security=True");
+        private static readonly string conString = ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
+        private SqlConnection conn = new SqlConnection(conString);
         public ConfirmDetails(string username, string company, string modelNumber,
         string imei,
         string price ,string customer,string Mbnumer,string add,string email)
