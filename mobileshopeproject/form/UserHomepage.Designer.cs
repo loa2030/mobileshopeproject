@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabViewStock = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabSales = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.btnSubmitUP = new System.Windows.Forms.Button();
@@ -59,25 +59,25 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewsSearch = new System.Windows.Forms.DataGridView();
             this.linkSearch = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textimei = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.tabViewStock.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.tabSales.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewsSearch)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabViewStock
+            // tabControl
             // 
-            this.tabViewStock.Controls.Add(this.tabSales);
-            this.tabViewStock.Controls.Add(this.tabPage2);
-            this.tabViewStock.Controls.Add(this.tabPage3);
-            this.tabViewStock.Location = new System.Drawing.Point(12, 12);
-            this.tabViewStock.Name = "tabViewStock";
-            this.tabViewStock.SelectedIndex = 0;
-            this.tabViewStock.Size = new System.Drawing.Size(620, 435);
-            this.tabViewStock.TabIndex = 0;
+            this.tabControl.Controls.Add(this.tabSales);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(752, 448);
+            this.tabControl.TabIndex = 0;
             // 
             // tabSales
             // 
@@ -278,6 +278,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "viewstock";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // cbSelectModelNumber
             // 
@@ -343,12 +344,12 @@
             // 
             this.tabPage3.Controls.Add(this.dataGridViewsSearch);
             this.tabPage3.Controls.Add(this.linkSearch);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.textimei);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(612, 406);
+            this.tabPage3.Size = new System.Drawing.Size(744, 419);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "searchCustomerbyIMEI";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -360,7 +361,7 @@
             this.dataGridViewsSearch.Name = "dataGridViewsSearch";
             this.dataGridViewsSearch.RowHeadersWidth = 51;
             this.dataGridViewsSearch.RowTemplate.Height = 24;
-            this.dataGridViewsSearch.Size = new System.Drawing.Size(525, 192);
+            this.dataGridViewsSearch.Size = new System.Drawing.Size(666, 226);
             this.dataGridViewsSearch.TabIndex = 3;
             // 
             // linkSearch
@@ -372,13 +373,14 @@
             this.linkSearch.TabIndex = 2;
             this.linkSearch.TabStop = true;
             this.linkSearch.Text = "Search";
+            this.linkSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSearch_LinkClicked);
             // 
-            // textBox1
+            // textimei
             // 
-            this.textBox1.Location = new System.Drawing.Point(192, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 22);
-            this.textBox1.TabIndex = 1;
+            this.textimei.Location = new System.Drawing.Point(192, 55);
+            this.textimei.Name = "textimei";
+            this.textimei.Size = new System.Drawing.Size(174, 22);
+            this.textimei.TabIndex = 1;
             // 
             // label14
             // 
@@ -394,10 +396,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabViewStock);
+            this.Controls.Add(this.tabControl);
             this.Name = "UserHomepage";
             this.Text = "UserHomepage";
-            this.tabViewStock.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabSales.ResumeLayout(false);
             this.tabSales.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -411,7 +413,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabViewStock;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabSales;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -442,7 +444,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridViewsSearch;
         private System.Windows.Forms.LinkLabel linkSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textimei;
         private System.Windows.Forms.Label label14;
     }
 }

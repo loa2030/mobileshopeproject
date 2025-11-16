@@ -230,6 +230,7 @@
             this.btnOK.TabIndex = 19;
             this.btnOK.Text = "Ok";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // ConfirmDetails
             // 

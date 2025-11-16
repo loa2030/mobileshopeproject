@@ -37,6 +37,7 @@ namespace mobileshopeproject.form
         private void WireEvents()
         {
             cbCompName.SelectedIndexChanged += cbCompName_SelectedIndexChanged;
+
         }
         private void LoadCompaines()
         {
@@ -93,6 +94,7 @@ namespace mobileshopeproject.form
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 cbMdNumber.SelectedIndexChanged -= cbMdNumber_SelectedIndexChanged;
+                
                 cbMdNumber.DataSource = dt;
                 cbMdNumber.DisplayMember = "ModelNum";
                 cbMdNumber.ValueMember = "ModelId";
@@ -245,5 +247,149 @@ namespace mobileshopeproject.form
             cbMdNumber.Enabled = false;
             cbIMEINumber.Enabled = false;
         }
+
+        //tab viewstock
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            if (tabControl.SelectedTab == tabPage2)
+            {
+                LoadCompanies_ViewStock();   // load cbSelectCompanyName
+            }
+        }
+
+        private void LoadCompanies_ViewStock()
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT CompId, CompName FROM tbl_Company";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cbSelectCompanyName.SelectedIndexChanged -= cbSelectCompanyName_SelectedIndexChanged;
+
+                cbSelectCompanyName.DataSource = dt;
+                cbSelectCompanyName.DisplayMember = "CompName";
+                cbSelectCompanyName.ValueMember = "CompId";
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu!" + ex.Message);
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+                cbSelectCompanyName.SelectedIndexChanged += cbSelectCompanyName_SelectedIndexChanged;
+
+            }
+        }
+        private void cbSelectCompanyName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbSelectCompanyName.SelectedValue == null) return;
+
+            try
+            {
+                string compId = cbSelectCompanyName.SelectedValue.ToString();
+                LoadModels_ViewStock(compId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void LoadModels_ViewStock(string compId)
+        {
+            try
+            {
+                conn.Open();
+                string query = "SELECT ModelNum,ModelId, AvailableQty FROM tbl_Model WHERE CompID = @CompanyID";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.SelectCommand.Parameters.AddWithValue("@CompanyID", compId);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cbSelectModelNumber.SelectedIndexChanged -= cbSelectModelNumber_SelectedIndexChanged;
+
+                cbSelectModelNumber.DataSource = dt;
+                cbSelectModelNumber.DisplayMember = "ModelNum";
+                cbSelectModelNumber.ValueMember = "ModelId";
+
+
+                //cbMdNumber.SelectedIndexChanged += cbMdNumber_SelectedIndexChanged;
+                txtStockAvailable.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh sách model 1:" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                cbSelectModelNumber.SelectedIndexChanged += cbSelectModelNumber_SelectedIndexChanged;
+            }
+        }
+        private void cbSelectModelNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbSelectModelNumber.SelectedItem is DataRowView row)
+            {
+                txtStockAvailable.Text = row["AvailableQty"].ToString();
+            }
+        }
+
+        private void linkSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string imei = textimei.Text.Trim();
+
+            if (string.IsNullOrEmpty(imei))
+            {
+                MessageBox.Show("Please enter IMEI number!");
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT 
+                c.Cust_Name,
+                c.MobNumber,
+                c.EmailId,
+                c.Address
+            FROM tbl_Sales s
+            JOIN tbl_Customer c ON s.CustId = c.CustId
+            WHERE s.IMEINO= @IMEI";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.SelectCommand.Parameters.AddWithValue("@IMEI", imei);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Invalid IMEI number!");
+                    dataGridViewsSearch.DataSource = null;
+                    return;
+                }
+
+                dataGridViewsSearch.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        //
+
     }
 }
