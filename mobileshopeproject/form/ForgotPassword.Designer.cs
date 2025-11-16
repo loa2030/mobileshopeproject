@@ -78,6 +78,7 @@
             this.Submit.TabIndex = 4;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // label3
             // 
@@ -97,6 +98,7 @@
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "login Page";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // ForgotPassword
             // 

@@ -94,6 +94,9 @@
     <EmbeddedResource Include="form\ConfirmDetails.resx">
       <DependentUpon>ConfirmDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\UserHomepage.resx">
       <DependentUpon>UserHomepage.cs</DependentUpon>
     </EmbeddedResource>

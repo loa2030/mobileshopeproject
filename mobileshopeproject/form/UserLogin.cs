@@ -76,5 +76,12 @@ namespace mobileshopeproject.form
                     conn.Close();
             }
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword forgotPassword = new ForgotPassword();
+            forgotPassword.Show();
+            this.Hide();
+        }
     }
 }
