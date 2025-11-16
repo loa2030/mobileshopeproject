@@ -38,7 +38,9 @@ namespace mobileshopeproject.form
         private void AdminHomepage_Load(object sender, EventArgs e)
         {
             AutoGenID();
-            LoadCompany();
+            LoadCompany(cboCompany_Model);
+            LoadCompany(cboCompany_Mobile);
+            AutoGenModelID();
         }
 
 
@@ -59,17 +61,20 @@ namespace mobileshopeproject.form
             cmd.ExecuteNonQuery();
             conn.Close();
 
+
             AutoGenID();
             txtCompName.Clear();
+
+
         }
 
         //
         //Modal
         //
         //hiện công ty trên Model
-        void LoadCompany()
+        void LoadCompany(ComboBox combo)
         {
-            cboCompany.Items.Clear();
+            combo.Items.Clear();
 
             cmd = new SqlCommand("SELECT CompID, CompName FROM tbl_Company", conn);
             conn.Open();
@@ -77,13 +82,13 @@ namespace mobileshopeproject.form
 
             while (dr.Read())
             {
-                cboCompany.Items.Add(new ComboItem(dr["CompName"].ToString(), dr["CompID"].ToString()));
+                combo.Items.Add(new ComboItem(dr["CompName"].ToString(), dr["CompID"].ToString()));
             }
 
             conn.Close();
 
-            if (cboCompany.Items.Count > 0)
-                cboCompany.SelectedIndex = 0;
+            if (combo.Items.Count > 0)
+                combo.SelectedIndex = 0;
         }
 
         public class ComboItem
@@ -103,25 +108,107 @@ namespace mobileshopeproject.form
             }
         }
 
+        void AutoGenModelID()
+        {
+            cmd = new SqlCommand("SELECT ISNULL(MAX(CAST(SUBSTRING(ModelID, 2, LEN(ModelID)) AS INT)), 0) FROM tbl_Model", conn);
+            conn.Open();
+
+            int next = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
+
+            conn.Close();
+
+            txtModelID.Text = "M" + next.ToString("D3");
+        }
+
         private void btnAddModel_Click(object sender, EventArgs e)
         {
-            string comID = txtModelID.Text;
-            string compName = txtModelNumber.Text;
+            string modelID = txtModelID.Text;
+            string companyID = ((ComboItem)cboCompany_Model.SelectedItem).Value;
+            string modelNumber = txtModelNumber.Text;
 
             cmd = new SqlCommand(
-                "INSERT INTO tbl_Model VALUES(@compID, @compName)", conn
+                "INSERT INTO tbl_Model (ModelID, CompID, ModelNum) VALUES (@modelID, @compID, @modelNum)",
+                conn
             );
 
-            cmd.Parameters.AddWithValue("@compID", comID);
-            cmd.Parameters.AddWithValue("@compName", compName);
+            cmd.Parameters.AddWithValue("@modelID", modelID);
+            cmd.Parameters.AddWithValue("@compID", companyID);
+            cmd.Parameters.AddWithValue("@modelNum", modelNumber);
 
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            AutoGenID();
-            txtCompName.Clear();
+            LoadCompany(cboCompany_Model);
+            LoadCompany(cboCompany_Mobile);
+
+            AutoGenModelID();
+            txtModelNumber.Clear();
+
         }
+
+        //
+        //Mobile
+        //
+
+        void LoadModelByCompany(string compID, ComboBox combo)
+        {
+            combo.Items.Clear();
+
+            cmd = new SqlCommand("SELECT ModelID, ModelNum FROM tbl_Model WHERE CompID = @id", conn);
+            cmd.Parameters.AddWithValue("@id", compID);
+
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                combo.Items.Add(new ComboItem(dr["ModelNum"].ToString(), dr["ModelID"].ToString()));
+            }
+
+            conn.Close();
+
+            if (combo.Items.Count > 0)
+                combo.SelectedIndex = 0;
+        }
+
+
+
+        private void cboCompany_Mobile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCompany_Mobile.SelectedItem == null) return;
+
+            string compID = ((ComboItem)cboCompany_Mobile.SelectedItem).Value;
+            LoadModelByCompany(compID, cboModel_Mobile);
+        }
+
+        private void btnInsertMobile_Click(object sender, EventArgs e)
+        {
+            string modelID = ((ComboItem)cboModel_Mobile.SelectedItem).Value;
+            string imei = txtIMEI.Text;
+            string price = txtPrice.Text;
+            DateTime warranty = dtpWarranty.Value;
+
+            string status = "Not sold";
+
+            cmd = new SqlCommand(
+                "INSERT INTO tbl_Mobile (ModelID, IMEINO, Price, Warranty, Status) " +
+                "VALUES (@modelID, @imei, @price, @warranty, @status)", conn);
+
+            cmd.Parameters.AddWithValue("@modelID", modelID);
+            cmd.Parameters.AddWithValue("@imei", imei);
+            cmd.Parameters.AddWithValue("@price", price);
+            cmd.Parameters.AddWithValue("@warranty", warranty);
+            cmd.Parameters.AddWithValue("@status", status);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Thêm Mobile thành công!", "Thông báo");
+        }
+
+
 
     }
 }

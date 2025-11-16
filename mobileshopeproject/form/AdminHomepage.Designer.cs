@@ -40,22 +40,22 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.txtModelNumber = new System.Windows.Forms.TextBox();
             this.txtModelID = new System.Windows.Forms.TextBox();
-            this.cboCompany = new System.Windows.Forms.ComboBox();
+            this.cboCompany_Model = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dtpWarranty = new System.Windows.Forms.DateTimePicker();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtIMEI = new System.Windows.Forms.TextBox();
+            this.cboModel_Mobile = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboCompany_Mobile = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
@@ -214,7 +214,7 @@
             // 
             this.tabPage4.Controls.Add(this.txtModelNumber);
             this.tabPage4.Controls.Add(this.txtModelID);
-            this.tabPage4.Controls.Add(this.cboCompany);
+            this.tabPage4.Controls.Add(this.cboCompany_Model);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Controls.Add(this.label3);
@@ -241,13 +241,13 @@
             this.txtModelID.Size = new System.Drawing.Size(100, 22);
             this.txtModelID.TabIndex = 6;
             // 
-            // cboCompany
+            // cboCompany_Model
             // 
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(170, 98);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(121, 24);
-            this.cboCompany.TabIndex = 5;
+            this.cboCompany_Model.FormattingEnabled = true;
+            this.cboCompany_Model.Location = new System.Drawing.Point(170, 98);
+            this.cboCompany_Model.Name = "cboCompany_Model";
+            this.cboCompany_Model.Size = new System.Drawing.Size(121, 24);
+            this.cboCompany_Model.TabIndex = 5;
             // 
             // label5
             // 
@@ -284,19 +284,20 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "ADD";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnAddModel_Click);
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.comboBox4);
-            this.tabPage5.Controls.Add(this.textBox6);
-            this.tabPage5.Controls.Add(this.textBox5);
-            this.tabPage5.Controls.Add(this.comboBox3);
+            this.tabPage5.Controls.Add(this.dtpWarranty);
+            this.tabPage5.Controls.Add(this.txtPrice);
+            this.tabPage5.Controls.Add(this.txtIMEI);
+            this.tabPage5.Controls.Add(this.cboModel_Mobile);
             this.tabPage5.Controls.Add(this.button3);
             this.tabPage5.Controls.Add(this.label10);
             this.tabPage5.Controls.Add(this.label9);
             this.tabPage5.Controls.Add(this.label8);
             this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Controls.Add(this.comboBox2);
+            this.tabPage5.Controls.Add(this.cboCompany_Mobile);
             this.tabPage5.Controls.Add(this.label6);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
@@ -306,35 +307,34 @@
             this.tabPage5.Text = "Mobile";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // dtpWarranty
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(166, 188);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 16;
+            this.dtpWarranty.Location = new System.Drawing.Point(166, 186);
+            this.dtpWarranty.Name = "dtpWarranty";
+            this.dtpWarranty.Size = new System.Drawing.Size(200, 22);
+            this.dtpWarranty.TabIndex = 17;
             // 
-            // textBox6
+            // txtPrice
             // 
-            this.textBox6.Location = new System.Drawing.Point(166, 155);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 15;
+            this.txtPrice.Location = new System.Drawing.Point(166, 155);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtPrice.TabIndex = 15;
             // 
-            // textBox5
+            // txtIMEI
             // 
-            this.textBox5.Location = new System.Drawing.Point(166, 118);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 14;
+            this.txtIMEI.Location = new System.Drawing.Point(166, 118);
+            this.txtIMEI.Name = "txtIMEI";
+            this.txtIMEI.Size = new System.Drawing.Size(100, 22);
+            this.txtIMEI.TabIndex = 14;
             // 
-            // comboBox3
+            // cboModel_Mobile
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(166, 77);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 13;
+            this.cboModel_Mobile.FormattingEnabled = true;
+            this.cboModel_Mobile.Location = new System.Drawing.Point(166, 77);
+            this.cboModel_Mobile.Name = "cboModel_Mobile";
+            this.cboModel_Mobile.Size = new System.Drawing.Size(121, 24);
+            this.cboModel_Mobile.TabIndex = 13;
             // 
             // button3
             // 
@@ -344,6 +344,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "INSERT";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnInsertMobile_Click);
             // 
             // label10
             // 
@@ -381,13 +382,14 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Model Number: ";
             // 
-            // comboBox2
+            // cboCompany_Mobile
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(166, 47);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 7;
+            this.cboCompany_Mobile.FormattingEnabled = true;
+            this.cboCompany_Mobile.Location = new System.Drawing.Point(166, 47);
+            this.cboCompany_Mobile.Name = "cboCompany_Mobile";
+            this.cboCompany_Mobile.Size = new System.Drawing.Size(121, 24);
+            this.cboCompany_Mobile.TabIndex = 7;
+            this.cboCompany_Mobile.SelectedIndexChanged += new System.EventHandler(this.cboCompany_Mobile_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -877,24 +879,23 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox txtModelNumber;
         private System.Windows.Forms.TextBox txtModelID;
-        private System.Windows.Forms.ComboBox cboCompany;
+        private System.Windows.Forms.ComboBox cboCompany_Model;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboCompany_Mobile;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboModel_Mobile;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtIMEI;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
@@ -940,5 +941,6 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DateTimePicker dtpWarranty;
     }
 }
