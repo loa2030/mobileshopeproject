@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -251,5 +252,167 @@ namespace mobileshopeproject.form
         {
             LoadModelByCompany(cboModel, cboCompany);
         }
+
+        //
+        //report
+        //
+        //Day
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string date = dtpDate.Value.ToString("yyyy-MM-dd");
+            string connectionString = ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT 
+                                s.SlsId,
+                                c.CompName AS CompanyName,
+                                m.ModelNum,
+                                s.IMEINO,
+                                s.Price
+                            FROM tbl_Sales s
+                            JOIN tbl_Mobile mb ON s.IMEINO = mb.IMEINO
+                            JOIN tbl_Model m ON mb.ModelId = m.ModelId
+                            JOIN tbl_Company c ON m.CompId = c.CompId
+                            WHERE CAST(s.PurchaseDate AS DATE) = @SaleDate;";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@SaleDate", date);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvSalesReport.DataSource = dt;
+
+                // Tính tổng tiền
+                int total = 0;
+                foreach (DataRow row in dt.Rows)
+                {
+                    total += Convert.ToInt32(row["Price"]);
+                }
+
+                lblTotal.Text = "Total Sales Amount = " + total.ToString();
+            }
+        }
+        //day to day
+        private void btnSearch_Click_daytoday(object sender, EventArgs e)
+        {
+            DateTime startDate = dtpStart.Value.Date;
+            DateTime endDate = dtpEnd.Value.Date;
+
+            using (SqlConnection conn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString))
+            {
+                string query = @"
+                    SELECT 
+                        s.SlsId,
+                        c.CompName AS CompanyName,
+                        m.ModelNum,
+                        s.IMEINO,
+                        s.Price,
+                        s.PurchaseDate
+                    FROM tbl_Sales s
+                    JOIN tbl_Mobile mo ON s.IMEINO = mo.IMEINO
+                    JOIN tbl_Model m ON mo.ModelId = m.ModelId
+                    JOIN tbl_Company c ON m.CompId = c.CompId
+                    WHERE s.PurchaseDate BETWEEN @start AND @end
+                    ORDER BY s.PurchaseDate;
+        ";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.SelectCommand.Parameters.AddWithValue("@start", startDate);
+                da.SelectCommand.Parameters.AddWithValue("@end", endDate);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvSalesReportDtD.DataSource = dt;
+
+                // Tính tổng
+                if (dt.Rows.Count > 0)
+                {
+                    decimal total = dt.AsEnumerable()
+                  .Sum(r => Convert.ToDecimal(r["Price"]));
+                    lblTotald2d.Text = $"Total Sales Amount = {total:N0}";
+                }
+                else
+                {
+                    lblTotald2d.Text = "Total Sales Amount = 0";
+                }
+            }
+        }
+
+        //
+        //Emplooyee
+        //
+
+        private void btnAdd_Empe_Click(object sender, EventArgs e)
+        {
+            string empName = txtEmpName.Text.Trim();
+            string address = txtAddress.Text.Trim();
+            string mobile = txtMobile.Text.Trim();
+            string user = txtUserName.Text.Trim();
+            string pwd = txtPwd.Text.Trim();
+            string repwd = txtRePwd.Text.Trim();
+            string hint = txtHint.Text.Trim();
+
+            // Validate
+            if (empName == "" || address == "" || mobile == "" ||
+                user == "" || pwd == "" || repwd == "")
+            {
+                MessageBox.Show("Please fill all fields!");
+                return;
+            }
+
+            if (pwd != repwd)
+            {
+                MessageBox.Show("Password mismatch!");
+                return;
+            }
+
+            SqlConnection conn = new SqlConnection(
+                System.Configuration.ConfigurationManager
+                .ConnectionStrings["AppMobileConnection"].ToString()
+            );
+
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(
+                    @"INSERT INTO tbl_User (UserName, PWD, EmployeeName, Address, MobileNumber, Hint)
+              VALUES (@u, @p, @e, @a, @m, @h)", conn);
+
+                cmd.Parameters.AddWithValue("@u", user);
+                cmd.Parameters.AddWithValue("@p", pwd);
+                cmd.Parameters.AddWithValue("@e", empName);
+                cmd.Parameters.AddWithValue("@a", address);
+                cmd.Parameters.AddWithValue("@m", mobile);
+                cmd.Parameters.AddWithValue("@h", hint);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Employee added successfully!");
+
+                // Clear fields
+                txtEmpName.Clear();
+                txtAddress.Clear();
+                txtMobile.Clear();
+                txtUserName.Clear();
+                txtPwd.Clear();
+                txtRePwd.Clear();
+                txtHint.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }
