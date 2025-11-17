@@ -40,7 +40,10 @@ namespace mobileshopeproject.form
             AutoGenID();
             LoadCompany(cboCompany_Model);
             LoadCompany(cboCompany_Mobile);
+            LoadCompany(cboCompany);
             AutoGenModelID();
+            GenerateTransID();
+
         }
 
 
@@ -72,24 +75,7 @@ namespace mobileshopeproject.form
         //Modal
         //
         //hiện công ty trên Model
-        void LoadCompany(ComboBox combo)
-        {
-            combo.Items.Clear();
-
-            cmd = new SqlCommand("SELECT CompID, CompName FROM tbl_Company", conn);
-            conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                combo.Items.Add(new ComboItem(dr["CompName"].ToString(), dr["CompID"].ToString()));
-            }
-
-            conn.Close();
-
-            if (combo.Items.Count > 0)
-                combo.SelectedIndex = 0;
-        }
+      
 
         public class ComboItem
         {
@@ -151,40 +137,9 @@ namespace mobileshopeproject.form
         //Mobile
         //
 
-        void LoadModelByCompany(string compID, ComboBox combo)
-        {
-            combo.Items.Clear();
-
-            cmd = new SqlCommand("SELECT ModelID, ModelNum FROM tbl_Model WHERE CompID = @id", conn);
-            cmd.Parameters.AddWithValue("@id", compID);
-
-            conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                combo.Items.Add(new ComboItem(dr["ModelNum"].ToString(), dr["ModelID"].ToString()));
-            }
-
-            conn.Close();
-
-            if (combo.Items.Count > 0)
-                combo.SelectedIndex = 0;
-        }
-
-
-
-        private void cboCompany_Mobile_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboCompany_Mobile.SelectedItem == null) return;
-
-            string compID = ((ComboItem)cboCompany_Mobile.SelectedItem).Value;
-            LoadModelByCompany(compID, cboModel_Mobile);
-        }
-
         private void btnInsertMobile_Click(object sender, EventArgs e)
         {
-            string modelID = ((ComboItem)cboModel_Mobile.SelectedItem).Value;
+            string modelID = cboModel_Mobile.SelectedValue.ToString();
             string imei = txtIMEI.Text;
             string price = txtPrice.Text;
             DateTime warranty = dtpWarranty.Value;
@@ -207,8 +162,94 @@ namespace mobileshopeproject.form
 
             MessageBox.Show("Thêm Mobile thành công!", "Thông báo");
         }
+        //
+        //
+        //UpdateStock
+        //
+        //
+        private void GenerateTransID()
+        {
+            using (SqlCommand cmd = new SqlCommand(
+                "SELECT 'T' + RIGHT('000' + CAST(ISNULL(MAX(CAST(SUBSTRING(TransID, 2, LEN(TransID)) AS INT)), 0) + 1 AS VARCHAR(10)), 3) " +
+                "FROM tbl_Transaction", conn))
+            {
+                conn.Open();
+                txtTransID.Text = cmd.ExecuteScalar().ToString();
+                conn.Close();
+            }
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string transID = txtTransID.Text;
+            string compID = cboCompany.SelectedValue.ToString();
+            string modelID = cboModel.SelectedValue.ToString();
+            int qty = int.Parse(txtQuantity.Text);
+            decimal amount = decimal.Parse(txtAmount.Text);
+
+            //Thêm transid
+            SqlCommand cmd1 = new SqlCommand(
+                "INSERT INTO tbl_Transaction (TransID, ModelID, Quantity, Amount) " +
+                "VALUES (@t, @m, @q, @a)", conn);
+
+            cmd1.Parameters.AddWithValue("@t", transID);
+            cmd1.Parameters.AddWithValue("@m", modelID);
+            cmd1.Parameters.AddWithValue("@q", qty);
+            cmd1.Parameters.AddWithValue("@a", amount);
+
+            //cập nhật số lượng cho bảng model
+            SqlCommand cmd2 = new SqlCommand(
+                "UPDATE tbl_Model SET AvailableQty = AvailableQty + @q WHERE ModelID = @m", conn);
+
+            cmd2.Parameters.AddWithValue("@q", qty);
+            cmd2.Parameters.AddWithValue("@m", modelID);
+
+            conn.Open();
+            cmd1.ExecuteNonQuery();
+            cmd2.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Stock updated successfully!");
+
+            
+            GenerateTransID();
+        }
 
 
+        void LoadModelByCompany(ComboBox modelBox, ComboBox companyBox)
+        {
+            if (companyBox.SelectedValue == null || companyBox.SelectedValue is DataRowView) return;
 
+            SqlDataAdapter da = new SqlDataAdapter(
+                "SELECT ModelID, ModelNum FROM tbl_Model WHERE CompID = @cid", conn);
+
+            da.SelectCommand.Parameters.AddWithValue("@cid", companyBox.SelectedValue.ToString());
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            modelBox.DataSource = dt;
+            modelBox.DisplayMember = "ModelNum";
+            modelBox.ValueMember = "ModelID";
+        }
+
+        void LoadCompany(ComboBox combo)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT CompID, CompName FROM tbl_Company", conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            combo.DataSource = dt;
+            combo.DisplayMember = "CompName";
+            combo.ValueMember = "CompID";
+        }
+
+        private void cboCompany_Mobile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadModelByCompany(cboModel_Mobile, cboCompany_Mobile);
+        }
+        private void cboCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadModelByCompany(cboModel, cboCompany);
+        }
     }
 }
