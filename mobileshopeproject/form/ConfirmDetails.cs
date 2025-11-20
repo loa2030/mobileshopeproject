@@ -143,7 +143,7 @@ namespace mobileshopeproject.form
             string cidcust = CheckExistingCustomer(Mobilenumber);
             string cidsal = GenerateSalesID();
 
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = Database.GetConnection())
             {
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();

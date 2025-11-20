@@ -24,6 +24,13 @@ namespace mobileshopeproject.form
             this.Hide();
         }
 
+        private void ForgotPass_linkClick (object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword forgotPassword = new ForgotPassword();
+            forgotPassword.Show();
+            this.Hide();
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtuid.Text == "admin" && txtpwd.Text == "admin")
