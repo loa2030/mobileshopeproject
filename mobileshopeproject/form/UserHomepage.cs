@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;// cài này gắn thư viện vào 
+using mobileshopeproject.Data;
 
 namespace mobileshopeproject.form
 {
@@ -24,8 +25,7 @@ namespace mobileshopeproject.form
         string Mobilenumber;
         string address;
         string Email;
-        private static readonly string conString= ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
-        private SqlConnection conn = new SqlConnection(conString);
+        private SqlConnection conn = Database.GetConnection();
 
         public UserHomepage(string user)
         {

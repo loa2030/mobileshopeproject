@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using mobileshopeproject.Data;
 
 namespace mobileshopeproject.form
 {
     public partial class ForgotPassword : Form
     {
-        private static readonly string conString = ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
-        private SqlConnection conn = new SqlConnection(conString);
+        private SqlConnection conn = Database.GetConnection();
         public ForgotPassword()
         {
             InitializeComponent();

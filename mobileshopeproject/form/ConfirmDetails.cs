@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using mobileshopeproject.Data;
 
 namespace mobileshopeproject.form
 {
@@ -24,8 +25,7 @@ namespace mobileshopeproject.form
         string Mobilenumber;
         string address;
         string Email;
-        private static readonly string conString = ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
-        private SqlConnection conn = new SqlConnection(conString);
+        private SqlConnection conn = Database.GetConnection();
         public ConfirmDetails(string username, string company, string modelNumber,
         string imei,
         string price, string customer, string Mbnumer, string add, string email)
@@ -84,7 +84,7 @@ namespace mobileshopeproject.form
         }
         private string GenerateCustomerID()
         {
-            using (SqlConnection conn = new SqlConnection(conString))
+            using (SqlConnection conn = Database.GetConnection())
             {
                 SqlCommand cmd = new SqlCommand("SELECT MAX(CustId) FROM tbl_Customer", conn);
 
@@ -104,7 +104,7 @@ namespace mobileshopeproject.form
         }
         private string GenerateSalesID()
         {
-            using (SqlConnection conn = new SqlConnection(conString))
+            using (SqlConnection conn = Database.GetConnection())
             {
                 SqlCommand cmd = new SqlCommand("SELECT MAX(SlsId) FROM tbl_Sales", conn);
 
@@ -124,7 +124,7 @@ namespace mobileshopeproject.form
         }
         private string CheckExistingCustomer(string mobile)
         {
-            using (SqlConnection conn = new SqlConnection(conString))
+            using (SqlConnection conn = Database.GetConnection())
             {
                 SqlCommand cmd = new SqlCommand(
                     "SELECT CustId FROM tbl_Customer WHERE MobNumber = @m", conn);
@@ -143,7 +143,7 @@ namespace mobileshopeproject.form
             string cidcust = CheckExistingCustomer(Mobilenumber);
             string cidsal = GenerateSalesID();
 
-            using (SqlConnection conn = new SqlConnection(conString))
+            using (SqlConnection conn = new SqlConnection())
             {
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();

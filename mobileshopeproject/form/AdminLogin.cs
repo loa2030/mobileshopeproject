@@ -17,12 +17,6 @@ namespace mobileshopeproject.form
             InitializeComponent();
         }
 
-        //void linkback_linkClick()
-        //{
-        //    UserLogin objLogin = new UserLogin();
-        //    objLogin.Show();
-        //    this.Hide();
-        //}
         private void linkback_linkClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
             UserLogin objLogin = new UserLogin();
@@ -30,15 +24,6 @@ namespace mobileshopeproject.form
             this.Hide();
         }
 
-        //void btnLogin_Click()
-        //{
-        //    if(txtuid.Text == "admin" && txtpwd.Text == "admin")
-        //    {
-        //        AdminHomepage objAdminHome = new AdminHomepage();
-        //        objAdminHome.Show();
-        //        this.Hide();
-        //    }    
-        //}
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtuid.Text == "admin" && txtpwd.Text == "admin")

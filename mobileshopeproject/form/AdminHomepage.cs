@@ -9,13 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using mobileshopeproject.Data;
 
 namespace mobileshopeproject.form
 {
     public partial class AdminHomepage : Form
     {
 
-        SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AppMobileConnection"].ToString());
+        private SqlConnection conn = Database.GetConnection();
 
         SqlCommand cmd;
         public AdminHomepage()
@@ -110,7 +111,7 @@ namespace mobileshopeproject.form
         private void btnAddModel_Click(object sender, EventArgs e)
         {
             string modelID = txtModelID.Text;
-            string companyID = ((ComboItem)cboCompany_Model.SelectedItem).Value;
+            string companyID = cboCompany_Model.SelectedValue.ToString();
             string modelNumber = txtModelNumber.Text;
 
             cmd = new SqlCommand(
@@ -260,22 +261,22 @@ namespace mobileshopeproject.form
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string date = dtpDate.Value.ToString("yyyy-MM-dd");
-            string connectionString = ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString;
 
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = Database.GetConnection())
             {
+                conn.Open();
+
                 string query = @"SELECT 
-                                s.SlsId,
-                                c.CompName AS CompanyName,
-                                m.ModelNum,
-                                s.IMEINO,
-                                s.Price
-                            FROM tbl_Sales s
-                            JOIN tbl_Mobile mb ON s.IMEINO = mb.IMEINO
-                            JOIN tbl_Model m ON mb.ModelId = m.ModelId
-                            JOIN tbl_Company c ON m.CompId = c.CompId
-                            WHERE CAST(s.PurchaseDate AS DATE) = @SaleDate;";
+                        s.SlsId,
+                        c.CompName AS CompanyName,
+                        m.ModelNum,
+                        s.IMEINO,
+                        s.Price
+                    FROM tbl_Sales s
+                    JOIN tbl_Mobile mb ON s.IMEINO = mb.IMEINO
+                    JOIN tbl_Model m ON mb.ModelId = m.ModelId
+                    JOIN tbl_Company c ON m.CompId = c.CompId
+                    WHERE CAST(s.PurchaseDate AS DATE) = @SaleDate;";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@SaleDate", date);
@@ -287,23 +288,19 @@ namespace mobileshopeproject.form
                 dgvSalesReport.DataSource = dt;
 
                 // Tính tổng tiền
-                int total = 0;
-                foreach (DataRow row in dt.Rows)
-                {
-                    total += Convert.ToInt32(row["Price"]);
-                }
+                int total = dt.AsEnumerable().Sum(r => Convert.ToInt32(r["Price"]));
 
-                lblTotal.Text = "Total Sales Amount = " + total.ToString();
+                lblTotal.Text = $"Total Sales Amount = {total:N0}";
             }
         }
+
         //day to day
         private void btnSearch_Click_daytoday(object sender, EventArgs e)
         {
             DateTime startDate = dtpStart.Value.Date;
             DateTime endDate = dtpEnd.Value.Date;
 
-            using (SqlConnection conn = new SqlConnection(
-                ConfigurationManager.ConnectionStrings["AppMobileConnection"].ConnectionString))
+            using (SqlConnection conn = Database.GetConnection())
             {
                 string query = @"
                     SELECT 
@@ -372,10 +369,7 @@ namespace mobileshopeproject.form
                 return;
             }
 
-            SqlConnection conn = new SqlConnection(
-                System.Configuration.ConfigurationManager
-                .ConnectionStrings["AppMobileConnection"].ToString()
-            );
+            SqlConnection conn = Database.GetConnection();
 
             try
             {
