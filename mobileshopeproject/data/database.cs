@@ -14,7 +14,7 @@ namespace mobileshopeproject.Data
         {
             try
             {
-                SqlConnection conn = new SqlConnection("Server=LONG;Database=AppMobile;Integrated Security=True;");
+                SqlConnection conn = new SqlConnection("Server=LAPTOP-86BEM0IS;Database=AppMobile;Integrated Security=True;");
                 return conn;
             }
             catch (Exception ex)

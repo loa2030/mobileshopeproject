@@ -103,7 +103,7 @@
             this.tabSales.Location = new System.Drawing.Point(4, 25);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(612, 406);
+            this.tabSales.Size = new System.Drawing.Size(744, 419);
             this.tabSales.TabIndex = 0;
             this.tabSales.Text = "Sales";
             this.tabSales.UseVisualStyleBackColor = true;
@@ -112,10 +112,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label9.Location = new System.Drawing.Point(153, 3);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label9.Location = new System.Drawing.Point(160, 3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 39);
+            this.label9.Size = new System.Drawing.Size(77, 29);
             this.label9.TabIndex = 35;
             this.label9.Text = "Sales";
             // 
@@ -123,7 +123,7 @@
             // 
             this.btnSubmitUP.Location = new System.Drawing.Point(181, 368);
             this.btnSubmitUP.Name = "btnSubmitUP";
-            this.btnSubmitUP.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmitUP.Size = new System.Drawing.Size(122, 33);
             this.btnSubmitUP.TabIndex = 34;
             this.btnSubmitUP.Text = "Submit";
             this.btnSubmitUP.UseVisualStyleBackColor = true;
@@ -133,14 +133,14 @@
             // 
             this.txtPP.Location = new System.Drawing.Point(181, 324);
             this.txtPP.Name = "txtPP";
-            this.txtPP.Size = new System.Drawing.Size(100, 22);
+            this.txtPP.Size = new System.Drawing.Size(143, 22);
             this.txtPP.TabIndex = 33;
             // 
             // txtEmailID
             // 
             this.txtEmailID.Location = new System.Drawing.Point(183, 188);
             this.txtEmailID.Name = "txtEmailID";
-            this.txtEmailID.Size = new System.Drawing.Size(100, 22);
+            this.txtEmailID.Size = new System.Drawing.Size(141, 22);
             this.txtEmailID.TabIndex = 32;
             // 
             // cbIMEINumber
@@ -148,7 +148,7 @@
             this.cbIMEINumber.FormattingEnabled = true;
             this.cbIMEINumber.Location = new System.Drawing.Point(181, 292);
             this.cbIMEINumber.Name = "cbIMEINumber";
-            this.cbIMEINumber.Size = new System.Drawing.Size(121, 24);
+            this.cbIMEINumber.Size = new System.Drawing.Size(143, 24);
             this.cbIMEINumber.TabIndex = 31;
             // 
             // cbMdNumber
@@ -156,7 +156,7 @@
             this.cbMdNumber.FormattingEnabled = true;
             this.cbMdNumber.Location = new System.Drawing.Point(181, 256);
             this.cbMdNumber.Name = "cbMdNumber";
-            this.cbMdNumber.Size = new System.Drawing.Size(121, 24);
+            this.cbMdNumber.Size = new System.Drawing.Size(143, 24);
             this.cbMdNumber.TabIndex = 30;
             // 
             // cbCompName
@@ -164,14 +164,14 @@
             this.cbCompName.FormattingEnabled = true;
             this.cbCompName.Location = new System.Drawing.Point(184, 221);
             this.cbCompName.Name = "cbCompName";
-            this.cbCompName.Size = new System.Drawing.Size(121, 24);
+            this.cbCompName.Size = new System.Drawing.Size(140, 24);
             this.cbCompName.TabIndex = 29;
             // 
             // txtMNumber
             // 
             this.txtMNumber.Location = new System.Drawing.Point(183, 99);
             this.txtMNumber.Name = "txtMNumber";
-            this.txtMNumber.Size = new System.Drawing.Size(100, 22);
+            this.txtMNumber.Size = new System.Drawing.Size(141, 22);
             this.txtMNumber.TabIndex = 28;
             // 
             // txtAdd
@@ -179,14 +179,14 @@
             this.txtAdd.Location = new System.Drawing.Point(181, 138);
             this.txtAdd.Multiline = true;
             this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(111, 44);
+            this.txtAdd.Size = new System.Drawing.Size(143, 44);
             this.txtAdd.TabIndex = 27;
             // 
             // txtCusN
             // 
             this.txtCusN.Location = new System.Drawing.Point(183, 54);
             this.txtCusN.Name = "txtCusN";
-            this.txtCusN.Size = new System.Drawing.Size(100, 22);
+            this.txtCusN.Size = new System.Drawing.Size(141, 22);
             this.txtCusN.TabIndex = 26;
             // 
             // label8
@@ -274,7 +274,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(612, 406);
+            this.tabPage2.Size = new System.Drawing.Size(744, 419);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "viewstock";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -285,7 +285,7 @@
             this.cbSelectModelNumber.FormattingEnabled = true;
             this.cbSelectModelNumber.Location = new System.Drawing.Point(218, 135);
             this.cbSelectModelNumber.Name = "cbSelectModelNumber";
-            this.cbSelectModelNumber.Size = new System.Drawing.Size(121, 24);
+            this.cbSelectModelNumber.Size = new System.Drawing.Size(157, 24);
             this.cbSelectModelNumber.TabIndex = 6;
             // 
             // cbSelectCompanyName
@@ -293,14 +293,14 @@
             this.cbSelectCompanyName.FormattingEnabled = true;
             this.cbSelectCompanyName.Location = new System.Drawing.Point(218, 84);
             this.cbSelectCompanyName.Name = "cbSelectCompanyName";
-            this.cbSelectCompanyName.Size = new System.Drawing.Size(121, 24);
+            this.cbSelectCompanyName.Size = new System.Drawing.Size(157, 24);
             this.cbSelectCompanyName.TabIndex = 5;
             // 
             // txtStockAvailable
             // 
             this.txtStockAvailable.Location = new System.Drawing.Point(218, 181);
             this.txtStockAvailable.Name = "txtStockAvailable";
-            this.txtStockAvailable.Size = new System.Drawing.Size(100, 22);
+            this.txtStockAvailable.Size = new System.Drawing.Size(124, 22);
             this.txtStockAvailable.TabIndex = 4;
             // 
             // label13
@@ -367,9 +367,10 @@
             // linkSearch
             // 
             this.linkSearch.AutoSize = true;
-            this.linkSearch.Location = new System.Drawing.Point(177, 103);
+            this.linkSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.linkSearch.Location = new System.Drawing.Point(274, 105);
             this.linkSearch.Name = "linkSearch";
-            this.linkSearch.Size = new System.Drawing.Size(50, 16);
+            this.linkSearch.Size = new System.Drawing.Size(75, 25);
             this.linkSearch.TabIndex = 2;
             this.linkSearch.TabStop = true;
             this.linkSearch.Text = "Search";
@@ -377,17 +378,20 @@
             // 
             // textimei
             // 
-            this.textimei.Location = new System.Drawing.Point(192, 55);
+            this.textimei.Location = new System.Drawing.Point(215, 49);
+            this.textimei.Multiline = true;
             this.textimei.Name = "textimei";
-            this.textimei.Size = new System.Drawing.Size(174, 22);
+            this.textimei.Size = new System.Drawing.Size(235, 29);
             this.textimei.TabIndex = 1;
+            this.textimei.TextChanged += new System.EventHandler(this.textimei_TextChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label14.Location = new System.Drawing.Point(53, 58);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(121, 16);
+            this.label14.Size = new System.Drawing.Size(156, 20);
             this.label14.TabIndex = 0;
             this.label14.Text = "Enter IMEI Number:";
             // 
@@ -395,7 +399,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(797, 486);
             this.Controls.Add(this.tabControl);
             this.Name = "UserHomepage";
             this.Text = "UserHomepage";

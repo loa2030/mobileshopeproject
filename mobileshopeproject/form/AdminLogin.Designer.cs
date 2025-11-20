@@ -101,6 +101,7 @@
             this.txtpwd.Name = "txtpwd";
             this.txtpwd.Size = new System.Drawing.Size(100, 22);
             this.txtpwd.TabIndex = 6;
+            this.txtpwd.UseSystemPasswordChar = true;
             // 
             // lblMsg
             // 

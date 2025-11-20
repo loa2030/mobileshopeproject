@@ -389,6 +389,11 @@ namespace mobileshopeproject.form
             }
         }
 
+        private void textimei_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //
 
     }
