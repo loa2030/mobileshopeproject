@@ -70,7 +70,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(185, 243);
+            this.linkLabel2.Location = new System.Drawing.Point(175, 271);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(112, 16);
             this.linkLabel2.TabIndex = 3;
@@ -80,9 +80,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 204);
+            this.button1.Location = new System.Drawing.Point(178, 218);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(94, 36);
             this.button1.TabIndex = 4;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
@@ -101,6 +101,7 @@
             this.txtpwd.Name = "txtpwd";
             this.txtpwd.Size = new System.Drawing.Size(100, 22);
             this.txtpwd.TabIndex = 6;
+            this.txtpwd.UseSystemPasswordChar = true;
             // 
             // lblMsg
             // 

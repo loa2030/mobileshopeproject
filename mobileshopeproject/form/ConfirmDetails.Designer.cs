@@ -214,7 +214,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(125, 337);
+            this.btnCancel.Location = new System.Drawing.Point(112, 310);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(87, 42);
             this.btnCancel.TabIndex = 18;
@@ -224,7 +224,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(332, 337);
+            this.btnOK.Location = new System.Drawing.Point(357, 310);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 42);
             this.btnOK.TabIndex = 19;

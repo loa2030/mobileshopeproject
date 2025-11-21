@@ -72,9 +72,9 @@
             // 
             // Submit
             // 
-            this.Submit.Location = new System.Drawing.Point(221, 185);
+            this.Submit.Location = new System.Drawing.Point(262, 182);
             this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(75, 23);
+            this.Submit.Size = new System.Drawing.Size(77, 33);
             this.Submit.TabIndex = 4;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 233);
+            this.label3.Location = new System.Drawing.Point(161, 242);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 16);
             this.label3.TabIndex = 5;
@@ -92,7 +92,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(354, 242);
+            this.linkLabel1.Location = new System.Drawing.Point(355, 273);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(72, 16);
             this.linkLabel1.TabIndex = 6;

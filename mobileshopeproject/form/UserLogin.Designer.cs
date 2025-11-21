@@ -79,12 +79,13 @@
             this.txtUserPass.Name = "txtUserPass";
             this.txtUserPass.Size = new System.Drawing.Size(100, 22);
             this.txtUserPass.TabIndex = 5;
+            this.txtUserPass.UseSystemPasswordChar = true;
             // 
             // btnUserLogin
             // 
             this.btnUserLogin.Location = new System.Drawing.Point(161, 179);
             this.btnUserLogin.Name = "btnUserLogin";
-            this.btnUserLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnUserLogin.Size = new System.Drawing.Size(83, 36);
             this.btnUserLogin.TabIndex = 6;
             this.btnUserLogin.Text = "Login";
             this.btnUserLogin.UseVisualStyleBackColor = true;
