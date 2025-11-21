@@ -25,19 +25,15 @@ namespace mobileshopeproject.form
         }
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Khi chuyển sang tab Model thì tự reload lại danh sách công ty
+            // Load công ty sau khi thêm
             if (tabControl2.SelectedTab == tabPageModel)
             {
                 LoadCompany(cboCompany_Model);
             }
-
-            // Nếu chuyển sang tab Mobile
             if (tabControl2.SelectedTab == tabPageMobile)
             {
                 LoadCompany(cboCompany_Mobile);
             }
-
-            // Nếu chuyển sang tab Update Stock
             if (chiu.SelectedTab == tabPageUpdateStock)
             {
                 LoadCompany(cboCompany);
@@ -280,7 +276,7 @@ namespace mobileshopeproject.form
             if (result != null)
             {
                 decimal price = Convert.ToDecimal(result);
-                txtAmount.Tag = price; // lưu price vào Tag để tính toán
+                txtAmount.Tag = price; // lưu price lại để tính Amount
             }
         }
         private void txtQuantity_TextChanged(object sender, EventArgs e)

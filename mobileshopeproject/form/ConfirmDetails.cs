@@ -93,7 +93,7 @@ namespace mobileshopeproject.form
 
                 if (result != DBNull.Value && result != null)
                 {
-                    string cusIDmax = result.ToString();   // ví dụ CU005
+                    string cusIDmax = result.ToString();
                     int number = int.Parse(cusIDmax.Substring(2));
                     number++;
                     return "CU" + number.ToString("D3");
@@ -113,7 +113,7 @@ namespace mobileshopeproject.form
 
                 if (result != DBNull.Value && result != null)
                 {
-                    string max = result.ToString();  // S005
+                    string max = result.ToString();
                     int number = int.Parse(max.Substring(1));
                     number++;
                     return "S" + number.ToString("D3");
@@ -179,14 +179,14 @@ namespace mobileshopeproject.form
 
                     cmdSales.ExecuteNonQuery();
 
-                    // Update mobile
+                    // Update mobile để đã bán
                     SqlCommand cmdUpdateMobile = new SqlCommand(
                         "UPDATE tbl_Mobile SET Status='Sold' WHERE IMEINO=@imei", conn, tran);
 
                     cmdUpdateMobile.Parameters.AddWithValue("@imei", imei);
                     cmdUpdateMobile.ExecuteNonQuery();
 
-                    // Update AvailableQty
+                    // Update AvailableQty sau khi mua
                     SqlCommand cmdUpdateQty = new SqlCommand(
                         "UPDATE tbl_Model SET AvailableQty = AvailableQty - 1 " +
                         "WHERE ModelId = (SELECT ModelId FROM tbl_Mobile WHERE IMEINO=@imei)", conn, tran);

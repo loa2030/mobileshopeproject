@@ -15,7 +15,6 @@ namespace mobileshopeproject.form
 {
     public partial class UserLogin : Form
     {
-          // nhớ thêm dòng này ở trên
 
         private SqlConnection conn = Database.GetConnection();
 
@@ -24,12 +23,6 @@ namespace mobileshopeproject.form
             InitializeComponent();
         }
 
-        //void linklabel_linkClick()
-        //{
-        //    AdminLogin objLogin = new AdminLogin();
-        //    objLogin.Show();
-        //    this.Hide();
-        //}
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AdminLogin objLogin = new AdminLogin();

@@ -231,23 +231,6 @@ namespace mobileshopeproject.form
             return true;
         }
 
-
-
-        private void ClearSalesForm()
-        {
-            txtCusN.Clear();
-            txtMNumber.Clear();
-            txtAdd.Clear();
-            txtEmailID.Clear();
-            txtPP.Clear();
-
-            cbCompName.SelectedIndex = -1;
-            cbMdNumber.DataSource = null;
-            cbIMEINumber.DataSource = null;
-            cbMdNumber.Enabled = false;
-            cbIMEINumber.Enabled = false;
-        }
-
         //tab viewstock
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -393,8 +376,6 @@ namespace mobileshopeproject.form
         {
 
         }
-
-        //
 
     }
 }
