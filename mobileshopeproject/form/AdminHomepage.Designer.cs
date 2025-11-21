@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.chiu = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -40,7 +41,7 @@
             this.txtCompName = new System.Windows.Forms.TextBox();
             this.txtCompID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPageModel = new System.Windows.Forms.TabPage();
             this.txtModelNumber = new System.Windows.Forms.TextBox();
             this.txtModelID = new System.Windows.Forms.TextBox();
             this.cboCompany_Model = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPageMobile = new System.Windows.Forms.TabPage();
             this.dtpWarranty = new System.Windows.Forms.DateTimePicker();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtIMEI = new System.Windows.Forms.TextBox();
@@ -60,7 +61,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cboCompany_Mobile = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageUpdateStock = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtTransID = new System.Windows.Forms.TextBox();
@@ -108,9 +109,9 @@
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabPageModel.SuspendLayout();
+            this.tabPageMobile.SuspendLayout();
+            this.tabPageUpdateStock.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -123,7 +124,7 @@
             // chiu
             // 
             this.chiu.Controls.Add(this.tabPage1);
-            this.chiu.Controls.Add(this.tabPage2);
+            this.chiu.Controls.Add(this.tabPageUpdateStock);
             this.chiu.Controls.Add(this.tabPage6);
             this.chiu.Controls.Add(this.tabPage7);
             this.chiu.Location = new System.Drawing.Point(20, 23);
@@ -133,6 +134,7 @@
             this.chiu.SelectedIndex = 0;
             this.chiu.Size = new System.Drawing.Size(1090, 604);
             this.chiu.TabIndex = 0;
+            this.chiu.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -149,8 +151,8 @@
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPageModel);
+            this.tabControl2.Controls.Add(this.tabPageMobile);
             this.tabControl2.Location = new System.Drawing.Point(0, 8);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabControl2.Name = "tabControl2";
@@ -158,6 +160,7 @@
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(811, 474);
             this.tabControl2.TabIndex = 3;
+            this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -225,23 +228,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Company ID";
             // 
-            // tabPage4
+            // tabPageModel
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
-            this.tabPage4.Controls.Add(this.txtModelNumber);
-            this.tabPage4.Controls.Add(this.txtModelID);
-            this.tabPage4.Controls.Add(this.cboCompany_Model);
-            this.tabPage4.Controls.Add(this.label5);
-            this.tabPage4.Controls.Add(this.label4);
-            this.tabPage4.Controls.Add(this.label3);
-            this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 40);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabPage4.Size = new System.Drawing.Size(803, 430);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Model";
+            this.tabPageModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
+            this.tabPageModel.Controls.Add(this.txtModelNumber);
+            this.tabPageModel.Controls.Add(this.txtModelID);
+            this.tabPageModel.Controls.Add(this.cboCompany_Model);
+            this.tabPageModel.Controls.Add(this.label5);
+            this.tabPageModel.Controls.Add(this.label4);
+            this.tabPageModel.Controls.Add(this.label3);
+            this.tabPageModel.Controls.Add(this.button2);
+            this.tabPageModel.Location = new System.Drawing.Point(4, 40);
+            this.tabPageModel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabPageModel.Name = "tabPageModel";
+            this.tabPageModel.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabPageModel.Size = new System.Drawing.Size(803, 430);
+            this.tabPageModel.TabIndex = 1;
+            this.tabPageModel.Text = "Model";
             // 
             // txtModelNumber
             // 
@@ -313,27 +316,27 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnAddModel_Click);
             // 
-            // tabPage5
+            // tabPageMobile
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
-            this.tabPage5.Controls.Add(this.dtpWarranty);
-            this.tabPage5.Controls.Add(this.txtPrice);
-            this.tabPage5.Controls.Add(this.txtIMEI);
-            this.tabPage5.Controls.Add(this.cboModel_Mobile);
-            this.tabPage5.Controls.Add(this.button3);
-            this.tabPage5.Controls.Add(this.label10);
-            this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.label8);
-            this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Controls.Add(this.cboCompany_Mobile);
-            this.tabPage5.Controls.Add(this.label6);
-            this.tabPage5.Location = new System.Drawing.Point(4, 40);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabPage5.Size = new System.Drawing.Size(803, 430);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Mobile";
+            this.tabPageMobile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
+            this.tabPageMobile.Controls.Add(this.dtpWarranty);
+            this.tabPageMobile.Controls.Add(this.txtPrice);
+            this.tabPageMobile.Controls.Add(this.txtIMEI);
+            this.tabPageMobile.Controls.Add(this.cboModel_Mobile);
+            this.tabPageMobile.Controls.Add(this.button3);
+            this.tabPageMobile.Controls.Add(this.label10);
+            this.tabPageMobile.Controls.Add(this.label9);
+            this.tabPageMobile.Controls.Add(this.label8);
+            this.tabPageMobile.Controls.Add(this.label7);
+            this.tabPageMobile.Controls.Add(this.cboCompany_Mobile);
+            this.tabPageMobile.Controls.Add(this.label6);
+            this.tabPageMobile.Location = new System.Drawing.Point(4, 40);
+            this.tabPageMobile.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabPageMobile.Name = "tabPageMobile";
+            this.tabPageMobile.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabPageMobile.Size = new System.Drawing.Size(803, 430);
+            this.tabPageMobile.TabIndex = 2;
+            this.tabPageMobile.Text = "Mobile";
             // 
             // dtpWarranty
             // 
@@ -410,9 +413,9 @@
             this.label8.Location = new System.Drawing.Point(34, 139);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 31);
+            this.label8.Size = new System.Drawing.Size(161, 31);
             this.label8.TabIndex = 9;
-            this.label8.Text = "IME number: ";
+            this.label8.Text = "IMEI number: ";
             // 
             // label7
             // 
@@ -445,27 +448,27 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Company Name: ";
             // 
-            // tabPage2
+            // tabPageUpdateStock
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.txtAmount);
-            this.tabPage2.Controls.Add(this.txtTransID);
-            this.tabPage2.Controls.Add(this.cboModel);
-            this.tabPage2.Controls.Add(this.txtQuantity);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.cboCompany);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Location = new System.Drawing.Point(4, 40);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1082, 560);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Update Stock";
+            this.tabPageUpdateStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
+            this.tabPageUpdateStock.Controls.Add(this.button4);
+            this.tabPageUpdateStock.Controls.Add(this.txtAmount);
+            this.tabPageUpdateStock.Controls.Add(this.txtTransID);
+            this.tabPageUpdateStock.Controls.Add(this.cboModel);
+            this.tabPageUpdateStock.Controls.Add(this.txtQuantity);
+            this.tabPageUpdateStock.Controls.Add(this.label15);
+            this.tabPageUpdateStock.Controls.Add(this.label14);
+            this.tabPageUpdateStock.Controls.Add(this.label13);
+            this.tabPageUpdateStock.Controls.Add(this.cboCompany);
+            this.tabPageUpdateStock.Controls.Add(this.label12);
+            this.tabPageUpdateStock.Controls.Add(this.label11);
+            this.tabPageUpdateStock.Location = new System.Drawing.Point(4, 40);
+            this.tabPageUpdateStock.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabPageUpdateStock.Name = "tabPageUpdateStock";
+            this.tabPageUpdateStock.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tabPageUpdateStock.Size = new System.Drawing.Size(1082, 560);
+            this.tabPageUpdateStock.TabIndex = 1;
+            this.tabPageUpdateStock.Text = "Update Stock";
             // 
             // button4
             // 
@@ -506,6 +509,7 @@
             this.cboModel.Name = "cboModel";
             this.cboModel.Size = new System.Drawing.Size(194, 39);
             this.cboModel.TabIndex = 14;
+            this.cboModel.SelectedIndexChanged += new System.EventHandler(this.cboModel_SelectedIndexChanged);
             // 
             // txtQuantity
             // 
@@ -515,6 +519,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(170, 38);
             this.txtQuantity.TabIndex = 13;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // label15
             // 
@@ -660,11 +665,11 @@
             // dgvSalesReport
             // 
             this.dgvSalesReport.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvSalesReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvSalesReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvSalesReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -723,22 +728,30 @@
             // dgvSalesReportDtD
             // 
             this.dgvSalesReportDtD.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvSalesReportDtD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvSalesReportDtD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvSalesReportDtD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSalesReportDtD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSalesReportDtD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSalesReportDtD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalesReportDtD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvSalesReportDtD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalesReportDtD.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgvSalesReportDtD.Location = new System.Drawing.Point(5, 124);
             this.dgvSalesReportDtD.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvSalesReportDtD.Name = "dgvSalesReportDtD";
@@ -972,12 +985,12 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabPageModel.ResumeLayout(false);
+            this.tabPageModel.PerformLayout();
+            this.tabPageMobile.ResumeLayout(false);
+            this.tabPageMobile.PerformLayout();
+            this.tabPageUpdateStock.ResumeLayout(false);
+            this.tabPageUpdateStock.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
@@ -1003,7 +1016,7 @@
         private System.Windows.Forms.TextBox txtCompName;
         private System.Windows.Forms.TextBox txtCompID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPageModel;
         private System.Windows.Forms.TextBox txtModelNumber;
         private System.Windows.Forms.TextBox txtModelID;
         private System.Windows.Forms.ComboBox cboCompany_Model;
@@ -1011,10 +1024,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPageMobile;
         private System.Windows.Forms.ComboBox cboCompany_Mobile;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageUpdateStock;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

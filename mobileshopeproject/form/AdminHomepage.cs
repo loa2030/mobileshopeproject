@@ -23,6 +23,26 @@ namespace mobileshopeproject.form
         {
             InitializeComponent();
         }
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Khi chuyển sang tab Model thì tự reload lại danh sách công ty
+            if (tabControl2.SelectedTab == tabPageModel)
+            {
+                LoadCompany(cboCompany_Model);
+            }
+
+            // Nếu chuyển sang tab Mobile
+            if (tabControl2.SelectedTab == tabPageMobile)
+            {
+                LoadCompany(cboCompany_Mobile);
+            }
+
+            // Nếu chuyển sang tab Update Stock
+            if (chiu.SelectedTab == tabPageUpdateStock)
+            {
+                LoadCompany(cboCompany);
+            }
+        }
 
         //tự tăng ID công ty    
         void AutoGenID()
@@ -244,6 +264,35 @@ namespace mobileshopeproject.form
             combo.DisplayMember = "CompName";
             combo.ValueMember = "CompID";
         }
+
+        private void cboModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboModel.SelectedValue == null) return;
+
+            SqlCommand cmd = new SqlCommand(
+                "SELECT Price FROM tbl_Mobile WHERE ModelId = @id", conn);
+            cmd.Parameters.AddWithValue("@id", cboModel.SelectedValue.ToString());
+
+            conn.Open();
+            object result = cmd.ExecuteScalar();
+            conn.Close();
+
+            if (result != null)
+            {
+                decimal price = Convert.ToDecimal(result);
+                txtAmount.Tag = price; // lưu price vào Tag để tính toán
+            }
+        }
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtQuantity.Text, out decimal qty) &&
+                txtAmount.Tag != null)
+            {
+                decimal price = (decimal)txtAmount.Tag;
+                txtAmount.Text = (qty * price).ToString();
+            }
+        }
+
 
         private void cboCompany_Mobile_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -93,10 +93,10 @@
             // btnUserLogin
             // 
             this.btnUserLogin.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserLogin.Location = new System.Drawing.Point(274, 231);
+            this.btnUserLogin.Location = new System.Drawing.Point(272, 243);
             this.btnUserLogin.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnUserLogin.Name = "btnUserLogin";
-            this.btnUserLogin.Size = new System.Drawing.Size(136, 69);
+            this.btnUserLogin.Size = new System.Drawing.Size(136, 44);
             this.btnUserLogin.TabIndex = 6;
             this.btnUserLogin.Text = "Login";
             this.btnUserLogin.UseVisualStyleBackColor = true;
