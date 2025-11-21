@@ -35,24 +35,26 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtuid = new System.Windows.Forms.TextBox();
             this.txtpwd = new System.Windows.Forms.TextBox();
-            this.lblMsg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 96);
+            this.label1.Location = new System.Drawing.Point(73, 83);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(123, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "UserName";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(54, 46);
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.linkLabel1.Location = new System.Drawing.Point(14, 9);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(38, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(60, 31);
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Back";
@@ -61,18 +63,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 145);
+            this.label2.Location = new System.Drawing.Point(73, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.Size = new System.Drawing.Size(112, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(175, 271);
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.linkLabel2.Location = new System.Drawing.Point(56, 216);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(112, 16);
+            this.linkLabel2.Size = new System.Drawing.Size(179, 31);
             this.linkLabel2.TabIndex = 3;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Fogot Password?";
@@ -80,9 +85,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(178, 218);
+            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(256, 196);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 36);
+            this.button1.Size = new System.Drawing.Size(153, 70);
             this.button1.TabIndex = 4;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
@@ -90,32 +97,29 @@
             // 
             // txtuid
             // 
-            this.txtuid.Location = new System.Drawing.Point(178, 90);
+            this.txtuid.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtuid.Location = new System.Drawing.Point(206, 76);
+            this.txtuid.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtuid.Name = "txtuid";
-            this.txtuid.Size = new System.Drawing.Size(100, 22);
+            this.txtuid.Size = new System.Drawing.Size(223, 38);
             this.txtuid.TabIndex = 5;
             // 
             // txtpwd
             // 
-            this.txtpwd.Location = new System.Drawing.Point(178, 139);
+            this.txtpwd.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtpwd.Location = new System.Drawing.Point(206, 137);
+            this.txtpwd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtpwd.Name = "txtpwd";
-            this.txtpwd.Size = new System.Drawing.Size(100, 22);
+            this.txtpwd.Size = new System.Drawing.Size(223, 38);
             this.txtpwd.TabIndex = 6;
             this.txtpwd.UseSystemPasswordChar = true;
             // 
-            // lblMsg
-            // 
-            this.lblMsg.Location = new System.Drawing.Point(178, 176);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(176, 22);
-            this.lblMsg.TabIndex = 7;
-            // 
             // AdminLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblMsg);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
+            this.ClientSize = new System.Drawing.Size(665, 401);
             this.Controls.Add(this.txtpwd);
             this.Controls.Add(this.txtuid);
             this.Controls.Add(this.button1);
@@ -123,6 +127,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "AdminLogin";
             this.Text = "AdminLogin";
             this.ResumeLayout(false);
@@ -139,6 +145,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtuid;
         private System.Windows.Forms.TextBox txtpwd;
-        private System.Windows.Forms.TextBox lblMsg;
     }
 }

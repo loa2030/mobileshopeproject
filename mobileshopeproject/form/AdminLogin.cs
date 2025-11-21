@@ -41,7 +41,7 @@ namespace mobileshopeproject.form
             }
             else
             {
-                lblMsg.Text = "User is not valid";
+                MessageBox.Show("User is not valid", "Lỗi - Sai tên hoặc mật khẩu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
