@@ -186,14 +186,6 @@ namespace mobileshopeproject.form
                     cmdUpdateMobile.Parameters.AddWithValue("@imei", imei);
                     cmdUpdateMobile.ExecuteNonQuery();
 
-                    // Update AvailableQty sau khi mua
-                    SqlCommand cmdUpdateQty = new SqlCommand(
-                        "UPDATE tbl_Model SET AvailableQty = AvailableQty - 1 " +
-                        "WHERE ModelId = (SELECT ModelId FROM tbl_Mobile WHERE IMEINO=@imei)", conn, tran);
-
-                    cmdUpdateQty.Parameters.AddWithValue("@imei", imei);
-                    cmdUpdateQty.ExecuteNonQuery();
-
                     tran.Commit();
                     MessageBox.Show("Đã bán hàng thành công!");
                     this.Close();

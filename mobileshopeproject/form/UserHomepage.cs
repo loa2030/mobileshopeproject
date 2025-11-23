@@ -88,7 +88,7 @@ namespace mobileshopeproject.form
             try
             {
                 conn.Open();
-                string query = "SELECT ModelNum,ModelId FROM tbl_Model WHERE CompID = @CompanyID";
+                string query = "SELECT ModelNum,ModelId FROM tbl_Model WHERE CompID = @CompanyID AND AvailableQty>0";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.SelectCommand.Parameters.AddWithValue("@CompanyID", id);
                 DataTable dt = new DataTable();
@@ -138,7 +138,7 @@ namespace mobileshopeproject.form
             try
             {
                 conn.Open();
-                string query = "SELECT IMEINO, Price FROM tbl_Mobile WHERE ModelId = @ModelID AND Status = 'Not sold'";
+                string query = "SELECT IMEINO, Price FROM tbl_Mobile WHERE ModelId = @ModelID AND Status='Not sold'";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.SelectCommand.Parameters.AddWithValue("@ModelID", modelID);
                 DataTable dt = new DataTable();
@@ -290,7 +290,7 @@ namespace mobileshopeproject.form
             try
             {
                 conn.Open();
-                string query = "SELECT ModelNum,ModelId, AvailableQty FROM tbl_Model WHERE CompID = @CompanyID";
+                string query = "SELECT ModelNum,ModelId, AvailableQty FROM tbl_Model WHERE CompID = @CompanyID ";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 da.SelectCommand.Parameters.AddWithValue("@CompanyID", compId);
                 DataTable dt = new DataTable();
