@@ -98,7 +98,7 @@ namespace mobileshopeproject.form
                 cbMdNumber.DataSource = dt;
                 cbMdNumber.DisplayMember = "ModelNum";
                 cbMdNumber.ValueMember = "ModelId";
-                modelNumber=cbMdNumber.Text;
+               
 
                 //cbMdNumber.SelectedIndexChanged += cbMdNumber_SelectedIndexChanged;
                 cbIMEINumber.DataSource = null;
@@ -118,7 +118,8 @@ namespace mobileshopeproject.form
 
         private void cbMdNumber_SelectedIndexChanged(Object sender, EventArgs e)
         {
-            if(cbMdNumber.SelectedValue!=null && cbMdNumber.SelectedValue != DBNull.Value)
+            modelNumber = cbMdNumber.SelectedValue.ToString();
+            if (cbMdNumber.SelectedValue!=null && cbMdNumber.SelectedValue != DBNull.Value)
             {
                 try
                 {
@@ -147,7 +148,7 @@ namespace mobileshopeproject.form
                 cbIMEINumber.DataSource = dt;
                 cbIMEINumber.DisplayMember = "IMEINO";
                 cbIMEINumber.ValueMember = "IMEINO";
-                imei=cbIMEINumber.Text;
+                
        
                 txtPP.Clear();
             }
@@ -165,6 +166,7 @@ namespace mobileshopeproject.form
 
         private void cbIMEINumber_SelectedIndexChanged(object sender, EventArgs e)
         {
+            imei = cbIMEINumber.SelectedValue.ToString();
             if (cbIMEINumber.SelectedItem is DataRowView row)
             {
                 txtPP.Text = row["Price"].ToString();
