@@ -35,6 +35,7 @@
             this.txtUserPass = new System.Windows.Forms.TextBox();
             this.btnUserLogin = new System.Windows.Forms.Button();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -115,12 +116,24 @@
             this.linkLabel2.Text = "Fogot Password?";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Location = new System.Drawing.Point(457, 361);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(196, 31);
+            this.linkLabel3.TabIndex = 8;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Thành Viên nhóm";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            // 
             // UserLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(241)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(665, 401);
+            this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.btnUserLogin);
             this.Controls.Add(this.txtUserPass);
@@ -147,5 +160,6 @@
         private System.Windows.Forms.TextBox txtUserPass;
         private System.Windows.Forms.Button btnUserLogin;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel3;
     }
 }
